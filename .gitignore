@@ -1,2 +1,9 @@
-# Ignore all files inside images folder
-images/*
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Design / source assets (not deployed)
+designs/
+
+# Optional editor settings
+.vscode/

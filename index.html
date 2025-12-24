@@ -8,6 +8,7 @@
     <style>
         /* Custom Fonts & Base Styles */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
@@ -23,6 +24,74 @@
             border: 1px solid #FFFFFF;
             background-color: rgba(255, 255, 255, 0.05);
         }
+        
+        .slideshow-container {
+            position: relative;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slideshow-nav:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .slideshow-nav.prev {
+            left: 0.5rem;
+        }
+        
+        .slideshow-nav.next {
+            right: 0.5rem;
+        }
+        
+        .slideshow-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        
+        .dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -30,7 +99,10 @@
     <div class="max-w-md mx-auto bg-[#1A1A1A] min-h-screen shadow-2xl overflow-hidden relative">
 
         <nav class="flex justify-between items-center p-6 pb-2">
-            <div class="text-xl font-bold tracking-tight">Laundry One <span class="text-gray-400">Co.</span></div>
+            <div>
+                <div class="text-xl font-bold tracking-tight" style="font-family: 'Poppins', sans-serif;">Laundry One <span class="text-gray-400">Co.</span></div>
+                <div class="text-xs text-gray-500 mt-1" style="font-family: 'Poppins', sans-serif;">- Established 2025 -</div>
+            </div>
             <button class="text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -39,7 +111,7 @@
         </nav>
 
         <section class="px-6 pt-8 pb-12">
-            <h1 class="text-4xl font-bold leading-tight mb-2">
+            <h1 class="text-4xl font-bold leading-tight mb-2" style="font-family: 'Poppins', sans-serif;">
                 WASH IT.<br>
                 DRY IT.<br>
                 <span class="text-gray-400">LOVE IT.</span>
@@ -56,19 +128,44 @@
             </button>
 
             <div class="w-full h-64 bg-gray-800 rounded-sm overflow-hidden relative">
-                <img src="images/shop.png" alt="Folded Laundry" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1545173168-9f1947eebb8f?q=80&w=2071&auto=format&fit=crop'">
+                <img src="images/photo1.jpeg" alt="Folded Laundry" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1545173168-9f1947eebb8f?q=80&w=2071&auto=format&fit=crop'">
             </div>
         </section>
 
         <section class="mb-12">
-            <div class="w-full h-64 bg-gray-800 mb-6 overflow-hidden">
-                <img src="images/gphoto2.png" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+            <div class="slideshow-container w-full h-64 bg-gray-800 mb-6 overflow-hidden relative">
+                <div class="slide active">
+                    <img src="images/photo5.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                </div>
+                <div class="slide">
+                    <img src="images/vending_machine.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                </div>
+                <div class="slide">
+                    <img src="images/payment.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                </div>
+                
+                <button class="slideshow-nav prev" onclick="changeSlide(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="slideshow-nav next" onclick="changeSlide(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                
+                <div class="slideshow-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
             </div>
             
             <div class="px-6">
                 <h2 class="text-2xl font-semibold mb-4">Modern. Fresh. Hassle-Free.</h2>
                 <p class="text-gray-400 leading-relaxed font-light">
-                    Experience the difference at West Melbourne’s premium self-service laundry. We combine state-of-the-art machinery with a safe, relaxing environment designed for your comfort.
+                    Experience the difference at West Melbourne's premium self-service laundry. We combine state-of-the-art machinery with a safe, relaxing environment designed for your comfort.
                 </p>
                 <div class="h-px w-16 bg-white mt-8 opacity-20"></div>
             </div>
@@ -79,7 +176,7 @@
 
             <div class="mb-8">
                 <div class="w-full h-48 bg-gray-800 rounded-sm mb-3 overflow-hidden">
-                     <img src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?q=80&w=2070&auto=format&fit=crop" alt="Washer" class="w-full h-full object-cover grayscale opacity-70">
+                     <img src="images/photo3.jpeg" alt="Washer" class="w-full h-full object-cover grayscale opacity-70">
                 </div>
                 <h4 class="text-lg font-medium">27kg Large Washers</h4>
                 <p class="text-sm text-gray-400 mt-1">Brand new commercial machines. Hot & Cold options.</p>
@@ -87,7 +184,7 @@
 
             <div class="mb-8">
                 <div class="w-full h-48 bg-gray-800 rounded-sm mb-3 overflow-hidden">
-                     <img src="images/dryer.png" alt="Dryer" class="w-full h-full object-cover grayscale opacity-70">
+                     <img src="images/larger_dryer.jpeg" alt="Dryer" class="w-full h-full object-cover grayscale opacity-70">
                 </div>
                 <h4 class="text-lg font-medium">20kg Large Dryers</h4>
                 <p class="text-sm text-gray-400 mt-1">Perfect drying—every time. Gentle on fabrics.</p>
@@ -104,7 +201,7 @@
             
             <div class="grid grid-cols-2 gap-4 mb-6">
                  <div class="col-span-2 h-40 bg-gray-700 rounded-sm overflow-hidden mb-2">
-                     <img src="images/gphoto3.png" alt="Relaxing" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop'">
+                     <img src="images/relax.png" alt="Relaxing" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop'">
                  </div>
             </div>
 
@@ -160,5 +257,52 @@
         </footer>
 
     </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let slideInterval;
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                currentSlideIndex = slides.length - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlideIndex);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlideIndex);
+            });
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlideIndex + direction);
+            resetInterval();
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        }
+
+        // Auto-advance slides every 5 seconds
+        slideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 </body>
 </html>

@@ -138,7 +138,8 @@
 </head>
 <body class="antialiased">
 
-    <div class="max-w-md mx-auto bg-[#333333] min-h-screen shadow-2xl overflow-hidden relative">
+    <!-- Mobile Layout -->
+    <div class="md:hidden max-w-md mx-auto bg-[#333333] min-h-screen shadow-2xl overflow-hidden relative">
 
         <nav class="flex justify-between items-center p-6 pb-2">
             <div>
@@ -165,9 +166,10 @@
                 <p class="text-xs uppercase tracking-widest font-semibold text-gray-300 mb-1">Opening Special</p>
                 <p class="text-2xl font-bold text-white mb-1 promo-highlight">50% OFF</p>
                 <p class="text-sm text-gray-300">Your first wash + 25% off till 18th Feb 2026</p>
+                <p class="text-xs italic text-gray-300 mt-3">* Terms and conditions apply</p>
             </div>
 
-            <div class="grid grid-cols-[2fr_1fr] gap-4 mb-8">
+            <div class="grid grid-cols-1 gap-4 mb-8">
                 <!-- Map Section (Left) -->
                 <div class="rounded-lg overflow-hidden h-40 relative">
                     <!-- Google Map Embed -->
@@ -196,7 +198,7 @@
                         <p class="text-gray-300">West Melbourne</p>
                         <p class="text-gray-300">VIC 3003</p>
                         <br>
-                        <p class="text-gray-300">☎ 03 70566688</p>
+                        <p class="text-gray-300">03 70566688</p>
                         <p class="text-gray-300"></p>
                         
                     </div>
@@ -219,7 +221,7 @@
         </section>
 
         <section class="mb-12">
-            <div class="slideshow-container w-full h-64 bg-gray-800 mb-6 overflow-hidden relative">
+            <div class="slideshow-container js-slideshow w-full h-64 bg-gray-800 mb-6 overflow-hidden relative">
                 <div class="slide active">
                     <img src="images/photo5.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
                 </div>
@@ -242,9 +244,9 @@
                 </button>
                 
                 <div class="slideshow-dots">
-                    <span class="dot active" onclick="currentSlide(0)"></span>
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot active" ></span>
+                    <span class="dot" ></span>
+                    <span class="dot" ></span>
                 </div>
             </div>
             
@@ -346,51 +348,257 @@
 
     </div>
 
+    <!-- Desktop Layout -->
+    <div class="hidden md:block w-full bg-[#333333] min-h-screen">
+        
+        <!-- Desktop Header -->
+        <nav class="flex justify-between items-center px-8 lg:px-16 xl:px-24 py-6 border-b border-gray-700">
+            <div>
+                <div class="text-5xl font-bold tracking-tight" style="font-family: 'Poppins', sans-serif;">Laundry One <span class="text-gray-400">Co.</span></div>
+                <div class="text-sm text-gray-500 mt-1" style="font-family: 'Poppins', sans-serif;">- EST. 2026 -</div>
+            </div>
+            <button class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Hero Section - Desktop -->
+        <section class="px-8 lg:px-16 xl:px-24 py-12 lg:py-16">
+            <div class="grid lg:grid-cols-[1fr_1.3fr] gap-8 items-center mb-12">
+                <!-- Left: Slogan -->
+                <div>
+                    <h1 class="text-6xl lg:text-7xl font-bold leading-tight mb-6" style="font-family: 'Poppins', sans-serif;">
+                        WASH IT.<br>
+                        DRY IT.<br>
+                        <span class="text-gray-400">LOVE IT.</span>
+                    </h1>
+                </div>
+                
+                <!-- Right: Promo Box -->
+                <div class="promo-box p-10 rounded-sm text-center">
+                    <p class="text-2xl uppercase tracking-widest font-semibold text-gray-300 mb-3">Opening Special</p>
+                    <p class="text-5xl font-bold text-white mb-3 promo-highlight">50% OFF</p>
+                    <p class="text-base text-gray-300">Your first wash + 25% off till 18th Feb 2026</p>
+                    <p class="text-xs italic text-gray-300 mt-auto pt-4">* Terms and conditions apply</p>
+                </div>
+            </div>
+
+            <!-- Map & Location Section - Desktop -->
+            <div class="grid lg:grid-cols-3 gap-6 mb-12">
+                <!-- Map (2 columns) -->
+                <div class="lg:col-span-2 rounded-lg overflow-hidden h-96 relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9508!3d-37.8136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5a05d97%3A0x537e8e9f6b5e5e5e!2s57%20Dudley%20St%2C%20West%20Melbourne%20VIC%203003!5e0!3m2!1sen!2sau!4v1234567890123!5m2!1sen!2sau"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full h-full rounded-lg">
+                    </iframe>
+                    <a href="https://www.google.com/maps/place/57+Dudley+Street,+West+Melbourne+VIC+3003" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 left-4 right-4 bg-[#333333] text-white text-sm font-bold py-3 px-4 rounded-md text-center hover:bg-[#444444] transition z-10">
+                        GET DIRECTIONS
+                    </a>
+                </div>
+                
+                <!-- Contact Info (1 column) -->
+                <div class="flex flex-col justify-center bg-[#2a2a2a] p-6 rounded-lg h-96">
+                    <h3 class="text-2xl font-bold mb-4">Visit Us 📍</h3>
+                    <div class="space-y-2 text-base mb-6">
+                        <p class="text-gray-300">57 Dudley St</p>
+                        <p class="text-gray-300">West Melbourne</p>
+                        <p class="text-gray-300">VIC 3003</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-300">📞 03 70566688</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <p class="text-gray-300 text-lg mb-1">Opening Hours</p>
+                        <p class="text-gray-300 text-sm mb-1">Open 7 Days</p>
+                        <p class="text-gray-300 text-sm mb-1">6:00 AM – 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shop Image - Desktop -->
+            <div class="w-full h-96 bg-gray-800 rounded-lg overflow-hidden mb-12">
+                <img src="images/shop-warm.png" alt="Laundry Shop" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1545173168-9f1947eebb8f?q=80&w=2071&auto=format&fit=crop'">
+            </div>
+        </section>
+
+        <!-- Slideshow & About - Desktop -->
+        <section class="px-8 lg:px-16 xl:px-24 mb-16">
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="slideshow-container js-slideshow w-full h-96 bg-gray-800 overflow-hidden relative rounded-lg">
+                    <div class="slide active">
+                        <img src="images/photo5.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                    </div>
+                    <div class="slide">
+                        <img src="images/vending_machine.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                    </div>
+                    <div class="slide">
+                        <img src="images/payment.jpeg" alt="Shop Interior" class="w-full h-full object-cover opacity-80" onerror="this.src='https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?q=80&w=2070&auto=format&fit=crop'">
+                    </div>
+                    
+                    <button class="slideshow-nav prev" onclick="changeSlide(-1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button class="slideshow-nav next" onclick="changeSlide(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    
+                    <div class="slideshow-dots">
+                        <span class="dot active" onclick="currentSlide(0)"></span>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-4xl font-semibold mb-6">Modern. Fresh. Hassle-Free.</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg mb-6">
+                        Experience the difference at West Melbourne's premium self-service laundry. We combine state-of-the-art machinery with a safe, relaxing environment designed for your comfort.
+                    </p>
+                    <div class="h-px w-16 bg-white opacity-20"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machines Section - Desktop -->
+        <section class="px-8 lg:px-16 xl:px-24 mb-16">
+            <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-8 font-semibold">Our Machines</h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <div class="w-full h-64 bg-gray-800 rounded-lg mb-4 overflow-hidden">
+                        <img src="images/photo3.jpeg" alt="Washer" class="w-full h-full object-cover grayscale opacity-70">
+                    </div>
+                    <h4 class="text-2xl font-medium mb-2">27kg Large Washers</h4>
+                    <p class="text-base text-gray-400">Brand new commercial machines. Hot & Cold options.</p>
+                </div>
+
+                <div>
+                    <div class="w-full h-64 bg-gray-800 rounded-lg mb-4 overflow-hidden">
+                        <img src="images/larger_dryer.jpeg" alt="Dryer" class="w-full h-full object-cover grayscale opacity-70">
+                    </div>
+                    <h4 class="text-2xl font-medium mb-2">20kg Large Dryers</h4>
+                    <p class="text-base text-gray-400">Perfect drying—every time. Gentle on fabrics.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3 p-6 border border-gray-800 rounded-lg bg-[#2a2a2a]">
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <p class="text-base text-gray-300">Vending snacks & soaps available onsite.</p>
+            </div>
+        </section>
+
+        <!-- Relax Section - Desktop -->
+        <section class="bg-[#222222] py-16 px-8 lg:px-16 xl:px-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-semibold mb-8">Relax While You Wash</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4">
+                            <span class="text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
+                            </span>
+                            <span class="text-gray-200 text-lg">Free High-Speed WiFi</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.125c0 .621.504 1.125 1.125 1.125z" /></svg>
+                            </span>
+                            <span class="text-gray-200 text-lg">TV Entertainment & Cooling</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9" /></svg>
+                            </span>
+                            <span class="text-gray-200 text-lg">Bench Seating & Charging Ports</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="h-80 bg-gray-700 rounded-lg overflow-hidden">
+                    <img src="images/relax.png" alt="Relaxing" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer - Desktop -->
+        <footer class="px-8 lg:px-16 xl:px-24 py-16 text-center border-t border-gray-800">
+            <!-- <a href="https://www.google.com/maps/place/57+Dudley+Street,+West+Melbourne+VIC+3003" target="_blank" rel="noopener noreferrer" class="text-2xl font-bold mb-8 inline-block hover:text-gray-300 transition cursor-pointer">
+                Visit Us
+            </a> -->
+            
+            <div class="grid md:grid-cols-3 gap-8 text-base text-gray-400 font-light max-w-4xl mx-auto">
+                <div>
+                    <p class="text-white font-medium mb-2">Location</p>
+                    <p>57 Dudley St, West Melbourne</p>
+                    <p>VIC 3003</p>
+                </div>
+
+                <div>
+                    <p class="text-white font-medium mb-2">Opening Hours</p>
+                    <p>Open 7 Days</p>
+                    <p>6:00 AM – 11:00 PM</p>
+                </div>
+
+                <div>
+                    <p class="text-white font-medium mb-2">Contact</p>
+                    <p><a href="tel:0370566688" class="hover:text-white transition">03 7056 6688</a></p>
+                    <p><a href="mailto:laundryoneco@gmail.com" class="hover:text-white transition">laundryoneco@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-sm text-gray-600">
+                <p>24/7 Customer Care Operators Available</p>
+                <p class="mt-4">&copy; 2026 Laundry One Co.</p>
+            </div>
+        </footer>
+
+    </div>
+
     <script>
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        let slideInterval;
-
-        function showSlide(index) {
-            if (index >= slides.length) {
-                currentSlideIndex = 0;
-            } else if (index < 0) {
-                currentSlideIndex = slides.length - 1;
-            } else {
-                currentSlideIndex = index;
+        function initSlideshow(root) {
+          let index = 0;
+          const slides = root.querySelectorAll('.slide');
+          const dots = root.querySelectorAll('.dot');
+          const prevBtn = root.querySelector('.slideshow-nav.prev');
+          const nextBtn = root.querySelector('.slideshow-nav.next');
+      
+          if (!slides.length) return;
+      
+          function show(i) {
+            index = (i + slides.length) % slides.length;
+            slides.forEach((s, idx) => s.classList.toggle('active', idx === index));
+            dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+          }
+      
+          prevBtn?.addEventListener('click', () => show(index - 1));
+          nextBtn?.addEventListener('click', () => show(index + 1));
+          dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+      
+          show(0);
+      
+          let timer = setInterval(() => show(index + 1), 5000);
+      
+          // reset timer after manual interaction
+          root.addEventListener('click', (e) => {
+            if (e.target.closest('.slideshow-nav') || e.target.closest('.dot')) {
+              clearInterval(timer);
+              timer = setInterval(() => show(index + 1), 5000);
             }
-
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentSlideIndex);
-            });
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlideIndex);
-            });
+          });
         }
-
-        function changeSlide(direction) {
-            showSlide(currentSlideIndex + direction);
-            resetInterval();
-        }
-
-        function currentSlide(index) {
-            showSlide(index);
-            resetInterval();
-        }
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
-                changeSlide(1);
-            }, 5000);
-        }
-
-        // Auto-advance slides every 5 seconds
-        slideInterval = setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-    </script>
+      
+        document.querySelectorAll('.js-slideshow').forEach(initSlideshow);
+      </script>
+      
 </body>
 </html>
